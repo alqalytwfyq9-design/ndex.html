@@ -2,25 +2,24 @@
 <html lang="ar">
 <head>
 <meta charset="UTF-8">
-<title>مرحبا بـ شيخ ياسين</title>
+<title>Last Moon - شيخ ياسين</title>
 <style>
-  html, body { margin:0; padding:0; width:100%; height:100%; overflow:hidden; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background:#000; }
-  video#bgVideo { position: fixed; top:50%; left:50%; min-width:100%; min-height:100%; width:auto; height:auto; transform: translate(-50%, -50%); z-index:-2; object-fit:cover; filter: brightness(0.6); }
-  .particles { position:absolute; top:0; left:0; width:100%; height:100%; pointer-events:none; z-index:-1; }
-  .content { position:absolute; top:50%; left:50%; transform:translate(-50%, -50%); text-align:center; color:#fff; }
-  .content img { width:200px; height:200px; border-radius:50%; border:4px solid #ff4500; margin-bottom:20px; animation:fadeIn 2s ease-in-out; }
-  h1 { font-size:3.5rem; margin:10px 0; color:#ffcc00; text-shadow: 0 0 20px #ff4500, 0 0 30px #ff4500; animation:fadeIn 2s 1s ease-in-out; }
-  p { font-size:1.8rem; margin:10px 0; color:#fff; text-shadow: 0 0 10px #ff0000; animation:fadeIn 2s 2s ease-in-out; }
-  a.btn { display:inline-block; padding:15px 30px; background:#ff4500; color:#fff; font-size:1.5rem; text-decoration:none; border-radius:8px; margin-top:20px; animation:fadeIn 2s 3s ease-in-out; box-shadow: 0 0 20px #ff4500, 0 0 30px #ffcc00; transition: transform 0.3s; }
-  a.btn:hover { transform: scale(1.1); box-shadow: 0 0 30px #ffcc00, 0 0 40px #ff4500; }
-  @keyframes fadeIn { from {opacity:0; transform: translateY(20px);} to {opacity:1; transform: translateY(0);} }
+html, body { margin:0; padding:0; width:100%; height:100%; overflow:hidden; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background:#000; }
+video#bgVideo { position: fixed; top:50%; left:50%; min-width:100%; min-height:100%; width:auto; height:auto; transform: translate(-50%, -50%); z-index:-2; object-fit:cover; filter: brightness(0.6); }
+.particles { position:absolute; top:0; left:0; width:100%; height:100%; pointer-events:none; z-index:-1; }
+.content { position:absolute; top:50%; left:50%; transform:translate(-50%, -50%); text-align:center; color:#fff; }
+.content img { width:200px; height:200px; border-radius:50%; border:4px solid #ff4500; margin-bottom:20px; animation:fadeIn 2s ease-in-out; }
+h1 { font-size:3.5rem; margin:10px 0; color:#ffcc00; text-shadow: 0 0 20px #ff4500, 0 0 30px #ff4500; animation:fadeIn 2s 1s ease-in-out; }
+p { font-size:1.8rem; margin:10px 0; color:#fff; text-shadow: 0 0 10px #ff0000; animation:fadeIn 2s 2s ease-in-out; }
+span.btn { display:inline-block; padding:15px 30px; background:#ff4500; color:#fff; font-size:1.5rem; border-radius:8px; margin-top:20px; animation:fadeIn 2s 3s ease-in-out; box-shadow: 0 0 20px #ff4500, 0 0 30px #ffcc00; }
+@keyframes fadeIn { from {opacity:0; transform: translateY(20px);} to {opacity:1; transform: translateY(0);} }
 </style>
 </head>
 <body>
 
-<!-- خلفية فيديو -->
+<!-- خلفية فيديو متحرك -->
 <video id="bgVideo" autoplay muted loop playsinline>
-  <source src="https://cdn.pixabay.com/vimeo/315264264/Fire-Background-12788.mp4" type="video/mp4">
+  <source src="رابط_الفيديو_من_Google_Drive.mp4" type="video/mp4">
 </video>
 
 <canvas class="particles" id="particleCanvas"></canvas>
@@ -29,12 +28,12 @@
   <img src="https://cdn.discordapp.com/avatars/854339377245192213/43646d3ddeda8a40b40eda2bdca3bb33.png?size=1024" alt="شيخ ياسين">
   <h1>أهلاً وسهلاً بـ شيخ ياسين</h1>
   <p>أحلى تحية لك من شيخ توفيق</p>
-  <a class="btn" href="https://discord.com/channels/1181307151549997167/1477461491086135477" target="_blank">انضم للديسكورد</a>
+  <span class="btn">Last Moon</span>
 </div>
 
-<!-- موسيقى تعمل -->
+<!-- موسيقى MP3 مباشر -->
 <audio id="bgMusic" autoplay loop>
-  <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+  <source src="رابط_الأغنية_من_Google_Drive.mp3" type="audio/mpeg">
 </audio>
 
 <script>

@@ -2,24 +2,66 @@
 <html lang="ar">
 <head>
 <meta charset="UTF-8">
-<title>Last Moon - شيخ ياسين</title>
+<title>مرحبا بـ شيخ ياسين</title>
 <style>
-html, body { margin:0; padding:0; width:100%; height:100%; overflow:hidden; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background:#000; }
-video#bgVideo { position: fixed; top:50%; left:50%; min-width:100%; min-height:100%; width:auto; height:auto; transform: translate(-50%, -50%); z-index:-2; object-fit:cover; filter: brightness(0.6); }
-.particles { position:absolute; top:0; left:0; width:100%; height:100%; pointer-events:none; z-index:-1; }
-.content { position:absolute; top:50%; left:50%; transform:translate(-50%, -50%); text-align:center; color:#fff; }
-.content img { width:200px; height:200px; border-radius:50%; border:4px solid #ff4500; margin-bottom:20px; animation:fadeIn 2s ease-in-out; }
-h1 { font-size:3.5rem; margin:10px 0; color:#ffcc00; text-shadow: 0 0 20px #ff4500, 0 0 30px #ff4500; animation:fadeIn 2s 1s ease-in-out; }
-p { font-size:1.8rem; margin:10px 0; color:#fff; text-shadow: 0 0 10px #ff0000; animation:fadeIn 2s 2s ease-in-out; }
-span.btn { display:inline-block; padding:15px 30px; background:#ff4500; color:#fff; font-size:1.5rem; border-radius:8px; margin-top:20px; animation:fadeIn 2s 3s ease-in-out; box-shadow: 0 0 20px #ff4500, 0 0 30px #ffcc00; }
-@keyframes fadeIn { from {opacity:0; transform: translateY(20px);} to {opacity:1; transform: translateY(0);} }
+html, body {
+    margin:0; padding:0; width:100%; height:100%;
+    overflow:hidden; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(120deg, #000000, #1a1a1a, #330000);
+}
+video#bgVideo {
+    position: fixed; top:50%; left:50%;
+    min-width:100%; min-height:100%; width:auto; height:auto;
+    transform: translate(-50%, -50%);
+    z-index:-2; object-fit:cover; filter: brightness(0.5) contrast(1.2);
+}
+.particles {
+    position:absolute; top:0; left:0; width:100%; height:100%;
+    pointer-events:none; z-index:-1;
+}
+.content {
+    position:absolute; top:50%; left:50%;
+    transform:translate(-50%, -50%); text-align:center; color:#fff;
+}
+.content img {
+    width:200px; height:200px; border-radius:50%;
+    border:5px solid #ffcc00; margin-bottom:20px;
+    animation:fadeIn 2s ease-in-out;
+    box-shadow: 0 0 20px #ffcc00, 0 0 40px #ff4500;
+}
+h1 {
+    font-size:4rem; margin:10px 0; color:#ffcc00;
+    text-shadow: 0 0 20px #ff4500, 0 0 40px #ffcc00;
+    animation:fadeIn 2s 1s ease-in-out;
+}
+p {
+    font-size:2rem; margin:10px 0; color:#fff;
+    text-shadow: 0 0 10px #ff4500, 0 0 20px #ffcc00;
+    animation:fadeIn 2s 2s ease-in-out;
+}
+a.btn {
+    display:inline-block; padding:15px 35px;
+    background:#ff4500; color:#fff; font-size:1.6rem;
+    text-decoration:none; border-radius:12px; margin-top:20px;
+    animation:fadeIn 2s 3s ease-in-out;
+    box-shadow: 0 0 25px #ff4500, 0 0 40px #ffcc00;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+a.btn:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 40px #ffcc00, 0 0 60px #ff4500;
+}
+@keyframes fadeIn {
+    from {opacity:0; transform: translateY(20px);}
+    to {opacity:1; transform: translateY(0);}
+}
 </style>
 </head>
 <body>
 
-<!-- خلفية فيديو متحرك -->
+<!-- خلفية فيديو MP4 مباشر -->
 <video id="bgVideo" autoplay muted loop playsinline>
-  <source src="https://drive.google.com/file/d/1SHMtvbMoknVTl9EHpTRtBWJyaQAb64Ii/view?usp=sharing" type="video/mp4">
+  <source src="https://cdn.pixabay.com/vimeo/315264264/Fire-Background-12788.mp4" type="video/mp4">
 </video>
 
 <canvas class="particles" id="particleCanvas"></canvas>
@@ -28,12 +70,12 @@ span.btn { display:inline-block; padding:15px 30px; background:#ff4500; color:#f
   <img src="https://cdn.discordapp.com/avatars/854339377245192213/43646d3ddeda8a40b40eda2bdca3bb33.png?size=1024" alt="شيخ ياسين">
   <h1>أهلاً وسهلاً بـ شيخ ياسين</h1>
   <p>أحلى تحية لك من شيخ توفيق</p>
-  <span class="btn">Last Moon</span>
+  <a class="btn" href="https://discord.com/channels/1181307151549997167/1477461491086135477" target="_blank">انضم للديسكورد</a>
 </div>
 
-<!-- موسيقى MP3 مباشر -->
+<!-- موسيقى MP3 خلفية بسيطة -->
 <audio id="bgMusic" autoplay loop>
-  <source src="https://drive.google.com/file/d/12GNuK-TQdeF_rrxj31c-iJ1vWItAlRLT/view?usp=sharing" type="audio/mpeg">
+  <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3" type="audio/mpeg">
 </audio>
 
 <script>
@@ -43,16 +85,17 @@ canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
 
 let particlesArray = [];
-const colors = ['#ff4500', '#ffcc00', '#ff0000'];
+const colors = ['#ff4500','#ffcc00','#ffffff','#ff0000'];
 
 class Particle {
   constructor(){
     this.x = Math.random()*canvas.width;
     this.y = Math.random()*canvas.height;
-    this.size = Math.random()*3 + 1;
-    this.speedX = Math.random()*1 - 0.5;
-    this.speedY = Math.random()*1 - 0.5;
+    this.size = Math.random()*4 + 1;
+    this.speedX = Math.random()*2 - 1;
+    this.speedY = Math.random()*2 - 1;
     this.color = colors[Math.floor(Math.random()*colors.length)];
+    this.opacity = Math.random()*0.5 + 0.5;
   }
   update(){
     this.x += this.speedX;
@@ -62,14 +105,17 @@ class Particle {
   }
   draw(){
     ctx.fillStyle = this.color;
+    ctx.globalAlpha = this.opacity;
     ctx.beginPath();
     ctx.arc(this.x,this.y,this.size,0,Math.PI*2);
     ctx.fill();
+    ctx.globalAlpha = 1;
   }
 }
 
 function init(){
-  for(let i=0;i<200;i++){
+  particlesArray = [];
+  for(let i=0;i<250;i++){
     particlesArray.push(new Particle());
   }
 }
@@ -78,6 +124,13 @@ function animate(){
   particlesArray.forEach(p=>{p.update();p.draw();});
   requestAnimationFrame(animate);
 }
+
+window.addEventListener('resize',()=>{
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+  init();
+});
+
 init();
 animate();
 </script>
